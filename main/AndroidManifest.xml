@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.haburasiapp">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Haburasiapp"
+        tools:targetApi="31">
+
+        <activity android:name=".AvatarEditActivity" />
+
+
+        <activity
+            android:name=".StampListActivity"
+            android:exported="true"
+            android:label="@string/title_activity_stamp_list"
+            android:theme="@style/Theme.Haburasiapp" />
+
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:label="@string/title_activity_edit_profile"
+            android:theme="@style/Theme.Haburasiapp" />
+
+        <activity
+            android:name=".MyPageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_my_page"
+            android:theme="@style/Theme.Haburasiapp" />
+
+        <activity
+            android:name=".RewardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_reward"
+            android:theme="@style/Theme.Haburasiapp" />
+
+        <activity
+            android:name=".BrushingGuideActivity"
+            android:exported="false"
+            android:label="@string/title_activity_brushing_guide"
+            android:theme="@style/Theme.Haburasiapp" />
+
+        <activity
+            android:name=".BrushingWithSensorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_brushing_with_sensor"
+            android:theme="@style/Theme.Haburasiapp" />
+
+        <activity
+            android:name=".BrushingModeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_brushing_mode"
+            android:theme="@style/Theme.Haburasiapp" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Haburasiapp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

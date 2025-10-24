@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">haburasiapp</string>
+    <string name="title_activity_brushing_mode">BrushingModeActivity</string>
+    <string name="title_activity_brushing_with_sensor">BrushingWithSensorActivity</string>
+    <string name="title_activity_brushing_guide">BrushingGuideActivity</string>
+    <string name="title_activity_reward">RewardActivity</string>
+    <string name="title_activity_my_page">MyPageActivity</string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
+    <string name="title_activity_stamp_list">StampListActivity</string>
+</resources>

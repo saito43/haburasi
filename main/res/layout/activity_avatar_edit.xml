@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- アバター表示 -->
+    <FrameLayout
+        android:id="@+id/avatarFrame"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <!-- 性別ベース -->
+        <ImageView
+            android:id="@+id/avatarBase"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/avatar_girl" />
+
+        <!-- 髪型 -->
+        <ImageView
+            android:id="@+id/avatarHair"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:visibility="gone" />
+
+        <!-- 服 -->
+        <ImageView
+            android:id="@+id/avatarClothes"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:visibility="visible" />
+
+        <!-- 小物 -->
+        <ImageView
+            android:id="@+id/avatarAccessory"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            android:translationX="107dp"
+            android:translationY="172dp"
+        />
+
+    </FrameLayout>
+
+    <!-- メニュー -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/genderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性別" />
+
+        <Button
+            android:id="@+id/hairButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="髪型" />
+
+        <Button
+            android:id="@+id/clothesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服" />
+
+        <Button
+            android:id="@+id/accessoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小物" />
+    </LinearLayout>
+</LinearLayout>
