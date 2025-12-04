@@ -1,16 +1,17 @@
 package com.example.haburasiapp
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.speech.tts.TextToSpeech
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Locale
-import android.content.Intent
 
 
 class BrushingGuideActivity : AppCompatActivity() {
@@ -19,7 +20,11 @@ class BrushingGuideActivity : AppCompatActivity() {
     private lateinit var timerText: TextView
     private lateinit var startButton: Button
     private lateinit var toothImage: ImageView
-    private var mediaPlayer: MediaPlayer? = null
+
+    // ⭐ BGM用の変数（追加） ⭐
+    private var bgmPlayer: MediaPlayer? = null
+
+    private var mediaPlayer: MediaPlayer? = null // ステップ音用
     private lateinit var startPlayer: MediaPlayer
     private lateinit var tts: TextToSpeech
 
@@ -74,6 +79,13 @@ class BrushingGuideActivity : AppCompatActivity() {
         // 効果音読み込み
         startPlayer = MediaPlayer.create(this, R.raw.start_sound_trimmed)
 
+        // ⭐ BGMの初期化（追加） ⭐
+        // R.raw.brushing_bgm は、あなたがres/rawフォルダに追加したBGMファイル名に合わせて変更してください
+        bgmPlayer = MediaPlayer.create(this, R.raw.brushing_bgm).apply {
+            isLooping = true // 曲をリピート再生する
+            setVolume(0.5f, 0.5f) // 音量を調整（ガイド音声が聞き取りやすいように少し小さく）
+        }
+
         // TTS 初期化
         tts = TextToSpeech(this) { status ->
             if (status == TextToSpeech.SUCCESS) {
@@ -112,6 +124,12 @@ class BrushingGuideActivity : AppCompatActivity() {
 
     private fun nextStep() {
         if (currentStep < steps.size) {
+
+            // ⭐ 最初のステップでBGMを再生開始（追加） ⭐
+            if (currentStep == 0) {
+                bgmPlayer?.start()
+            }
+
             guideText.text = steps[currentStep]
             tts.speak(stepsTTS[currentStep], TextToSpeech.QUEUE_FLUSH, null, null)
 
@@ -170,5 +188,10 @@ class BrushingGuideActivity : AppCompatActivity() {
         mediaPlayer = null
         startPlayer.release()
         tts.shutdown()
+
+        // ⭐ BGMの停止と解放（追加） ⭐
+        bgmPlayer?.stop()
+        bgmPlayer?.release()
+        bgmPlayer = null
     }
 }

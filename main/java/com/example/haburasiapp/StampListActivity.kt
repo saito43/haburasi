@@ -25,22 +25,22 @@ class StampListActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("StampPrefs", MODE_PRIVATE)
 
         val calendarImage = ImageView(this).apply {
-            setImageResource(R.drawable.calendar)
+            setImageResource(R.drawable.calendar_december)
             layoutParams = FrameLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT)
             scaleType = ImageView.ScaleType.FIT_CENTER
         }
         layout.addView(calendarImage)
 
-        val stampSize = 160
-        val startX = 30
-        val startY = 930
+        val stampSize = 130
+        val startX = -140
+        val startY = 810
         val cellWidth = 205
         val cellHeight = 205
 
-        val firstDayColumn = 3
+        val firstDayColumn = 0
 
         val today = LocalDate.now()
-        val currentDay = if (today.year == 2025 && today.monthValue == 5) today.dayOfMonth else -1
+        val currentDay = if (today.year == 2025 && today.monthValue == 12) today.dayOfMonth else -1
 
         var lastStampedDay = prefs.getInt("lastStampedDay", -1)
         var currentStreak = prefs.getInt("currentStreak", 0)

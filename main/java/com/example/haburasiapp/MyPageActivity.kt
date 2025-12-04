@@ -26,7 +26,7 @@ class MyPageActivity : AppCompatActivity() {
         val toHomeButton = findViewById<Button>(R.id.toHomeButton)
 
         val prefs: SharedPreferences = getSharedPreferences("mypage_data", MODE_PRIVATE)
-        val name = prefs.getString("name", "おじょう")
+        val name = prefs.getString("name", "温情のおじょう")
         val address = prefs.getString("address", "愛知県")
         val memo = prefs.getString("memo", "今日もがんばる！")
 
